@@ -12,8 +12,8 @@ def send_sms(text_message):
 
     message = client.messages.create(
               body=text_message,
-              from_='+17752547593',
-              to='+79771384401',
+              from_=os.getenv('TELEPHONE_NUMBER_FROM_TWILIO'),
+              to=os.getenv('YOUR_TELEPHONE_NUMBER'),
               )
 
     if message.sid:
