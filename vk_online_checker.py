@@ -10,8 +10,8 @@ load_dotenv()
 def info_about_user(target_id: str):
     ACCESS_TOKEN = os.getenv('VK_ACCESS_TOKEN')
     API_VERSION = '5.124'
-    URL = 'https://api.vk.com/method/users.get?user_ids=' + target_id + '&fields=online,last_seen&access_token=' + \
-          ACCESS_TOKEN + '&v=' + API_VERSION
+    URL = f'https://api.vk.com/method/users.get?user_ids={target_id}&fields=online,last_seen' \
+          f'&access_token={ACCESS_TOKEN}&v={API_VERSION}'
 
     response = requests.request('GET', URL)
 
