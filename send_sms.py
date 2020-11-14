@@ -21,9 +21,9 @@ def send_sms(text_message):
 
         if message.sid:
             logging.info(f'The message: "{text_message}" is sent.')
-            return print('The message is sent successfully.')
+            return 'The message is sent successfully.'
         else:
-            return print('Failed to send the message.')
+            return 'Failed to send the message.'
 
     except twilio.base.exceptions.TwilioRestException:
-        return print('Not a valid telephone number.')
+        return 'Not a valid telephone number.'
